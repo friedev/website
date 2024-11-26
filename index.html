@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Aaron Friesen</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="index">
+			<p>
+				I make free software, games, and music, all of which can be found here.
+			</p>
+			<p>
+				My email address is
+				<span
+					class="hint"
+					title="You can figure it out, but the spambots can't."
+					>my first name at this domain</span
+				>. Here is my <a href="pubkey.txt">PGP public key</a>.
+			</p>
+			<p>
+				To submit a patch for any of my projects, use
+				<code><a href="https://git-send-email.io">git send-email</a></code
+				>.
+			</p>
+			{% include content.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

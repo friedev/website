@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>APWT</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">APWT</h1>
+			<p class="date">June 22, 2017</p>
+			<code id="git">git clone https://frie.dev/apwt.git</code>
+			<p id="excerpt" hidden>
+				AsciiPanel Windowing Toolkit (APWT) is a set of classes and utilities
+				that will make working with
+				<a href="https://github.com/trystan/AsciiPanel">AsciiPanel</a> on a
+				larger scale much easier. It includes support for screens, text
+				windows, multicolored strings, and constants for different CP437
+				characters.
+			</p>
+			{% include readme/apwt.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

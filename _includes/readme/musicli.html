@@ -1,0 +1,99 @@
+<p>MusiCLI (pronounced "musically") is a MIDI sequencer that runs entirely in the terminal.</p>
+<p>MusiCLI 1 was a C++ application developed by Aaron Friesen and David Ryan for <a href="https://unlcornhacks.com">CornHacks 2021</a>.
+It provided a tracker-like curses interface, MIDI export via <a href="https://midifile.sapp.org">Midifile</a>, and limited playback via <a href="https://fluidsynth.org">FluidSynth</a>.
+The tag <code>v1.0.0</code> marks the state of MusiCLI 1 at the end of CornHacks 2021.</p>
+<p>MusiCLI 2 is a complete rewrite of MusiCLI in Python, developed from scratch by Aaron Friesen for <a href="https://unlcornhacks.com">CornHacks 2022</a>, where it won third place overall.
+MusiCLI 2 provides a piano roll interface, MIDI import and export via <a href="https://github.com/mido/mido">mido</a>, live non-blocking playback with <a href="https://github.com/nwhitehead/pyfluidsynth">pyFluidSynth</a>, and improved modal editing.
+The tag <code>v2.0.0</code> marks the state of MusiCLI 2 at the end of CornHacks 2022.</p>
+<h2 id="setup">Setup</h2>
+<p>Dependencies:</p>
+<ul>
+<li>Python 3</li>
+<li>curses</li>
+<li><a href="https://github.com/mido/mido">mido</a> (optional; required for MIDI import&#47;export)</li>
+<li><a href="https://fluidsynth.org">FluidSynth</a> (optional; required for playback)</li>
+<li><a href="https://github.com/nwhitehead/pyfluidsynth">pyFluidSynth</a> (optional; required for playback)</li>
+</ul>
+<p>To install FluidSynth on your device, see <a href="https://www.fluidsynth.org/download/">Getting FluidSynth</a>.</p>
+<p>Then, clone the repository and run:</p>
+<pre><code class="language-sh">pip install .
+</code></pre>
+<p>For live playback, you will need a soundfont in SF2 format.
+I recommend the MuseScore General Soundfont, which can be freely downloaded from the <a href="https://musescore.org/en/handbook/3/soundfonts-and-sfz-files">MuseScore handbook</a> along with other soundfonts.</p>
+<h2 id="usage">Usage</h2>
+<p>To run MusiCLI:</p>
+<pre><code class="language-sh">musicli file.mid --soundfont=soundfont.sf2
+</code></pre>
+<p>Providing a MIDI file to open is optional.
+Providing an existing MIDI file will import it, while providing a nonexistent file will cause it to be created upon saving.
+You may also provide no file; if you choose to save later, it will be saved as <code>untitled.mid</code>.</p>
+<p>If you wish to import a MIDI file, but save changes to another file, use the <code>--import</code> or <code>-i</code> option:</p>
+<pre><code class="language-sh">musicli file_to_export.mid --import=file_to_import.mid --soundfont=soundfont.sf2
+</code></pre>
+<p>Providing a soundfont with <code>--soundfont</code> or <code>-f</code> is also optional, but live playback will be unavailable unless you do.
+If no soundfont is provided, MusiCLI will look for one at <code>&#47;usr&#47;share&#47;soundfonts&#47;default.sf2</code>, which is FluidSynth&#39;s default location.</p>
+<p>Much more song-specific information can be customized via other command line arguments. View a full list by running:</p>
+<pre><code class="language-sh">musicli --help
+</code></pre>
+<h3 id="keybindings">Keybindings</h3>
+<p><strong>For a full list of editor keybindings, run:</strong></p>
+<pre><code class="language-sh">musicli --keymap
+</code></pre>
+<h3 id="interface">Interface</h3>
+<p>Unlike the tracker interface of MusiCLI 1, MusiCLI 2 provides a piano roll interface that should be familiar to users of modern DAWs.</p>
+<p>Each line represents a different pitch, labeled with its note name on the left of the UI.
+Further left is the key you can type to enter that note while in insert mode (more on that later).
+The dots on some rows correspond to the notes in the current key and scale you are using.
+By default, this is C Major, but you can change it with the <code>--key</code> and <code>--scale</code> arguments.</p>
+<p>Each character column represents a subdivision of a beat.
+By default, this is a 16th note, but this can be customized with the <code>--cols-per-beat</code> argument.
+Each beat is marked with a dot, and each measure is marked with a line.
+The length of each measure can be customized with <code>--beats-per-measure</code> flag.</p>
+<p>Each note is represented by a colored rectangle that occupies one pitch but may span multiple beats.
+Longer notes are labeled with their note name for convenience.
+The last note entered is highlighted in white, and the notes in the last chord entered are highlighted in gray (if available, otherwise white as well).
+The color of the note represents which MIDI track it is on.
+Notes may overlap, including notes from different tracks.
+Currently, instruments cannot be changed while in the editor, but better support for instruments (including drums) is planned with a high priority.</p>
+<p>The thin white vertical line is the cursor, which shows where you are currently editing notes.
+The thicker white vertical line is the playhead, which is where playback is currently playing or stopped.</p>
+<p>The editor scrolls infinitely horizontally, and a limited amount vertically, encompassing the full range of MIDI notes.</p>
+<h3 id="editing">Editing</h3>
+<p>MusiCLI is a modal editor, like vi, which means that the editor has different modes in which keys do different actions.</p>
+<p>The default mode is normal mode, which allows you to navigate freely and use more special commands.</p>
+<p>You can enter insert mode by pressing <code>i</code>.
+Insert mode allows you to insert notes into your song directly by typing them on the keyboard.
+You may always return to normal mode by pressing Escape.</p>
+<p>In insert mode, the keys are laid out like two rows of a piano, with the <code>z</code> and <code>a</code> rows forming the lower set of white and black keys respectively, and the <code>q</code> and number rows forming the higher octave set.
+This is a feature available in DAWs that support keyboard input, such as <a href="https://lmms.io">LMMS</a>, and is intended to be at least marginally familiar to pianists.
+For quick reference, the keys that correspond to each note are listed to the left of them on the left sidebar.</p>
+<p>To change where you are editing, use the arrow keys.
+Left and right will change the beat you are entering, and up and down will change the octave range.
+In normal mode, you can pan around without changing where you&#39;re editing by using the vi keys <code>hjkl</code>.
+Pressing Shift along with the vi keys will cause you to pan a shorter distance.</p>
+<p>Many operations will affect the last note or chord you inserted.
+These notes are highlighted in white and gray respectively.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<blockquote>
+<p>The color gray isn&#39;t showing up and every note in the selected chord is white.</p>
+</blockquote>
+<p>Your terminal probably does not have gray as color 8.
+You may be able to change this in your terminal&#39;s color scheme settings.</p>
+<p>Terminals known to support gray include <a href="https://alacritty.org">Alacritty</a> and <a href="https://codeberg.org/dnkl/foot">foot</a>.
+Terminals known not to support gray include <a href="https://github.com/Swordfish90/cool-retro-term">cool-retro-term</a>.
+<a href="https://github.com/dylanaraps/pywal">pywal</a> is also compatible.</p>
+<blockquote>
+<p>MusiCLI just crashed. What do I do?</p>
+</blockquote>
+<p>A <code>crash.log</code> file should have been generated (or a different file if you set the <code>--crash-file</code> option).
+If not, there may be some output directly in the terminal.
+In any case, please submit an issue on GitHub with the contents of the file or the error messages in the terminal, and a description of what you were doing right before the crash happened.
+This will help get the issue resolved as soon as possible!</p>
+<p>If MusiCLI didn&#39;t crash, but playback stopped working and you got a bunch of text appearing in weird places on the screen, the FluidSynth thread probably crashed.
+Currently, getting the error messages out of a failure like this are challenging, so just try to copy&#47;paste or screenshot what you can of the error messages that appeared on screen.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Before submitting a patch, run <a href="https://black.readthedocs.io">Black</a> to format your code.
+Strongly consider running other linters as well, such as <a href="https://pylint.org">pylint</a>, <a href="https://flake8.pycqa.org">flake8</a>, and <a href="https://www.mypy-lang.org">mypy</a>.</p>
+<p>If you want to contribute but aren&#39;t sure what to work on, you can find a list of tasks in <code>TODO.md</code>.</p>
+<p>If anyone is interested in maintaining or extending MusiCLI 1, feel free to fork this repo from the <code>v1.0.0</code> tag.
+I do not intend to maintain it any further myself.</p>

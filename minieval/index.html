@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Minieval</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">Minieval</h1>
+			<p class="date">April 24, 2021</p>
+			<img class="logo" src="logo.png" alt="" />
+			<div class="center">
+				<p id="excerpt" hidden>A tiny medieval city builder.</p>
+			</div>
+			<p id="download">
+				<strong>Download:</strong>
+				<a class="button" href="minieval.x86_64" download>Linux</a>
+				<a class="button" href="minieval.exe" download>Windows</a>
+				or <a href="play">play online</a>
+			</p>
+			<p id="soundtrack">
+				Soundtrack:
+				<a href="/minieval-ost">Minieval OST</a>
+			</p>
+			<code id="git">git clone https://frie.dev/minieval.git</code>
+			{% include readme/minieval.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

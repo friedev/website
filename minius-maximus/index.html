@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Minius Maximus</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">Minius Maximus</h1>
+			<p class="date">February 16, 2020</p>
+			<img class="logo" src="logo.png" alt="" />
+			<p id="download">
+				<strong>Download:</strong>
+				<a class="button" href="minius-maximus-mac.app.zip" download>Mac</a>
+				<a class="button" href="minius-maximus-win.zip" download>Windows</a>
+			</p>
+			<p id="soundtrack">
+				Soundtrack:
+				<a href="/minius-maximus-ost">Minius Maximus OST</a>
+			</p>
+			<code id="git">git clone https://frie.dev/minius-maximus.git</code>
+			<p id="excerpt" hidden>
+				A turn-based strategy puzzler for the
+				<a href="https://gdc.cs.ksu.edu/game-jam/">2020 K-State Game Jam</a>.
+				You can freely change your stats during combat, but when one stat goes
+				up, another must go down.
+			</p>
+			{% include readme/minius-maximus.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

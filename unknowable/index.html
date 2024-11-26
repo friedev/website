@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Unknowable</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">Unknowable</h1>
+			<p class="date">November 13, 2022</p>
+			<img class="logo" src="logo.png" alt="" />
+			<p id="download">
+				<strong>Download:</strong>
+				<a class="button" href="unknowable.x86_64" download>Linux</a>
+				<a class="button" href="unknowable.exe" download>Windows</a>
+				or <a href="play">play online</a>
+			</p>
+			<code id="git">git clone https://frie.dev/unknowable.git</code>
+			<p id="excerpt" hidden>
+				The celestial conjunction is nigh. Assemble your cult and seek out
+				mystical artifacts to summon forth the elder gods, but be wary: the
+				Watch is ever vigilant. Originally made in under 34 hours for the
+				<a href="https://unl-game-dev-club.github.io"
+					>UNL Game Development Club</a
+				>'s first game jam in 2022, with the theme "stay out of sight".
+			</p>
+			{% include readme/unknowable.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

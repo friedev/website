@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Arghonaut</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">Arghonaut</h1>
+			<p class="date">November 7, 2021</p>
+			<code id="download">pip install arghonaut</code>
+			<code id="git">git clone https://frie.dev/arghonaut.git</code>
+			<p id="excerpt" hidden>
+				Arghonaut is an interactive interpreter, visualizer, and debugger for
+				<a href="https://esolangs.org/wiki/Argh!">Argh! and Aargh!</a>, which
+				are <a href="https://esolangs.org/wiki/Befunge">Befunge</a>-like
+				esoteric programming languages by Sascha Wilde.
+			</p>
+			{% include readme/arghonaut.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<p>AsciiPanel Windowing Toolkit is a library that provides several high-level UI components for <a href="https://github.com/trystan/AsciiPanel">AsciiPanel</a>.</p>
+<p><strong>DISCLAIMER:</strong> If you want to develop a roguelike or other complex TUI application in Java, I strongly recommend using <a href="https://hexworks.org/projects/zircon">Zircon</a> instead of AsciiPanel or APWT.</p>
+<h2 id="compiling">Compiling</h2>
+<p>Dependencies:</p>
+<ul>
+<li>Java 8 or newer</li>
+<li>Gradle (last tested with Gradle 7.5.1)</li>
+</ul>
+<p>To build a library JAR:</p>
+<pre><code class="language-sh">gradle clean build jar
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>To use APWT in your own Java project, you have a few options:</p>
+<ol>
+<li>Build a library JAR as described in the Compiling section above and include it in your project.</li>
+<li>Add this repository as a Git submodule: <code>git submodule add https:&#47;&#47;frie.dev&#47;apwt.git</code>
+<ul>
+<li>You may need to create a symbolic link so that APWT&#39;s source tree is in the path expected by your build system.</li>
+<li>See <a href="https://frie.dev/eversector">EverSector</a> for an example of this configuration.</li>
+</ul></li>
+<li>Use a <a href="https://blog.gradle.org/introducing-source-dependencies">Gradle source dependency</a>.
+<ul>
+<li>I have not been able to get this to work for APWT, but you may have better luck.</li>
+</ul></li>
+</ol>
+<h2 id="documentation">Documentation</h2>
+<p>APWT has full JavaDoc documentation.
+To read it, run <code>gradle javadoc</code> and browse to <code>build&#47;docs&#47;index.html</code>.</p>
+<p>To get started, I would recommend simply initializing a <code>Display</code> object and going from there.
+The <code>Display</code> is designed to work with a hierarchy of <code>Screen</code>s, each of which read input and display output.
+This system is modeled after <a href="https://trystans.blogspot.com/2016/01/roguelike-tutorial-00-table-of-contents.html">Trystan&#39;s roguelike tutorial</a>.</p>
+<p>For an example project using APWT, see <a href="https://frie.dev/eversector">EverSector</a>.</p>
+<h2 id="contributing">Contributing</h2>
+<p>APWT is no longer in development because it is largely feature-complete and I have no further use for it in my own projects.
+If you want to expand on APWT, make your own fork.</p>

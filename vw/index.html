@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>vw</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">vw</h1>
+			<p class="date">February 5, 2023</p>
+			<code id="git">git clone https://frie.dev/vw.git</code>
+			<p id="excerpt" hidden>
+				vw (vim wiki) is yet another system for maintaining a simple personal
+				wiki using vim and markdown.
+			</p>
+			{% include readme/vw.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>

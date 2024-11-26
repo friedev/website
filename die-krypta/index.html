@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Die Krypta</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">Die Krypta</h1>
+			<p class="date">July 17, 2022</p>
+			<img class="logo" src="logo.png" alt="" />
+			<p id="download">
+				<strong>Download:</strong>
+				<a class="button" href="die_krypta.x86_64" download>Linux</a>
+				<a class="button" href="die_krypta.zip" download>Mac</a>
+				<a class="button" href="die_krypta.exe" download>Windows</a>
+				or <a href="play">play online</a>
+			</p>
+			<p id="soundtrack">
+				Soundtrack:
+				<a href="/die-krypta-ost">Die Krypta OST</a>
+			</p>
+			<code id="git">git clone https://frie.dev/die-krypta.git</code>
+			<p id="excerpt" hidden>
+				Roll yourself through the crypt and attack with each of your faces.
+				Made in under 12 hours for the
+				<a href="https://itch.io/jam/gmtk-jam-2022">2022 GMTK Game Jam</a>.
+			</p>
+			{% include readme/die-krypta.html %}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>
