@@ -1,36 +1,27 @@
 ---
+layout: project
+title: Die Krypta
+date: 2022-07-17
 ---
 
-<html>
-	<head>
-		<title>Die Krypta</title>
-		{% include head.html %}
-	</head>
-	<body>
-		{% include header.html %}
-		<main class="project">
-			<h1 class="post">Die Krypta</h1>
-			<p class="date">July 17, 2022</p>
-			<img class="logo" src="logo.png" alt="" />
-			<p id="download">
-				<a
-					class="button"
-					href="https://github.com/friedev/die-krypta/releases/latest"
-					>Download</a
-				>
-			</p>
-			<!--<p id="soundtrack">
-				Soundtrack:
-				<a href="/die-krypta-ost">Die Krypta OST</a>
-			</p>-->
-			<code id="git">git clone https://github.com/friedev/die-krypta.git</code>
-			<p id="excerpt" hidden>
-				Roll yourself through the crypt and attack with each of your faces.
-				Made in under 12 hours for the
-				<a href="https://itch.io/jam/gmtk-jam-2022">2022 GMTK Game Jam</a>.
-			</p>
-			{% include readme/die-krypta.html %}
-		</main>
-		{% include footer.html %}
-	</body>
-</html>
+<img class="logo" src="logo.png" alt="" />
+<!--
+<p id="download">
+	<a
+		class="button"
+		href="https://github.com/friedev/die-krypta/releases/latest"
+		>Download</a
+	>
+</p>
+<p id="soundtrack">
+	Soundtrack:
+	<a href="/die-krypta-ost">Die Krypta OST</a>
+</p>
+<code id="git">git clone https://github.com/friedev/die-krypta.git</code>
+-->
+<p id="excerpt" hidden>
+	Roll yourself through the crypt and attack with each of your faces. Made in
+	under 12 hours for the
+	<a href="https://itch.io/jam/gmtk-jam-2022">2022 GMTK Game Jam</a>.
+</p>
+{% include update_notice.html %} {% include readme/die-krypta.html %}

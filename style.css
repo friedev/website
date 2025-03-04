@@ -140,6 +140,14 @@ blockquote > p {
 	margin-bottom: 0;
 }
 
+blockquote.notice {
+	background-color: #430;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	border-left: 0.5rem solid #fc0;
+}
+
 code {
 	display: block;
 	font-size: 1rem;
@@ -256,6 +264,10 @@ footer {
 
 	blockquote {
 		background-color: #ccc;
+	}
+
+	blockquote.notice {
+		background-color: #fe8;
 	}
 
 	footer {

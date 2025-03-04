@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>{{ page.title }}</title>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include header.html %}
+		<main class="project">
+			<h1 class="post">{{ page.title }}</h1>
+			<p class="date">{{ page.date | date: "%B %-d, %Y" }}</p>
+			{{ content }}
+		</main>
+		{% include footer.html %}
+	</body>
+</html>
