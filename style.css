@@ -259,7 +259,7 @@ code {
 div.project-row {
 	display: flex;
 	flex-flow: nowrap row;
-	gap: 1rem;
+	column-gap: 1rem;
 
 	/* Horizontal scrolling: https://stackoverflow.com/a/25313647 */
 	position: relative;
@@ -398,6 +398,8 @@ footer {
 
 	div.icon {
 		margin-right: 1rem;
+		margin-bottom: 0;
+		height: auto;
 	}
 
 	div.project-row,
