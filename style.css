@@ -216,7 +216,7 @@ blockquote {
 	border-left: 0.5rem solid #888;
 }
 
-blockquote > p {
+blockquote > p:last-of-type {
 	margin-bottom: 0;
 }
 
