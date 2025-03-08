@@ -1,0 +1,39 @@
+title: Aaron Friesen
+timezone: America/Chicago
+url: https://frie.dev
+
+markdown: kramdown
+highlighter: rouge
+
+collections:
+  posts:
+    output: true
+    permalink: "/blog/:categories/:year/:month/:day/:title:output_ext"
+    sort_by: date
+  projects:
+    output: true
+    permalink: "/:path/"
+    sort_by: date
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      # excerpt_separator: "<!--more-->"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+plugins:
+  - jekyll-feed
+  - jekyll-toc
+
+# https://github.com/pattex/jekyll-tagging
+tag_page_layout: tag_page
+tag_page_dir: tags

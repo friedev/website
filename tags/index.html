@@ -1,0 +1,19 @@
+---
+layout: page
+title: Tags
+---
+
+<!-- https://eduardoboucas.com/blog/2014/11/16/creating-a-tags-page-in-jekyll.html -->
+<h1>Tags</h1>
+{% for tag in site.tags %}
+<details id="{{ tag[0] }}">
+	<summary>
+		<a href="{{ tag[0] }}" name="{{ tag[0] }}"><code>{{ tag[0] }}</code></a>
+		({{ tag[1].size }})
+	</summary>
+	<ul>
+		{% for post in tag[1] %} {% include archive_post.html post=post %} {%
+		endfor %}
+	</ul>
+</details>
+{% endfor %}

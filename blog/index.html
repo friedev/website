@@ -1,0 +1,19 @@
+---
+layout: page
+title: Blog
+---
+
+<div class="blog-heading">
+	<h1>Blog Archives</h1>
+	<p>
+		<a href="/feed.xml" title="RSS Feed"
+			><i class="fa-solid fa-square-rss fa-xl"></i
+		></a>
+	</p>
+</div>
+<p><a href="/tags">Browse by Tags</a></p>
+<ul>
+	{% for post in site.posts %}
+		{% include archive_post.html post=post %}
+	{% endfor %}
+</ul>

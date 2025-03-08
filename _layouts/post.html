@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+<h1 class="post">{{ page.title }}</h1>
+<div class="space-between">
+	<p class="date">
+		Published {{ page.date | date_to_string }}
+		{% if page.updated %}
+			&mdash; Last Updated {{ page.updated | date_to_string }}
+		{% endif %}
+	</p>
+	<p class="tags"><i class="fa-solid fa-tag"></i> {{ page | tags }}</p>
+</div>
+{% if page.toc %}
+<details class="toc">
+	<summary>Table of Contents</summary>
+	{{ content | toc_only }}
+</details>
+{% endif %} {{ content }}
+

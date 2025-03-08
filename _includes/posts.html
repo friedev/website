@@ -1,0 +1,12 @@
+<div class="posts">
+	{% for post in site.posts limit: include.limit %}
+	<div class="post-card">
+		<div class="post-title space-between">
+			<h3><a class="no-color" href="{{ post.url }}">{{ post.title }}</a></h3>
+			<p class="date">{{ post.date | date_to_string }}</p>
+		</div>
+		<div class="excerpt">{{ post.excerpt }}</div>
+		<p class="tags"><i class="fa-solid fa-tag"></i> {{ post | tags }}</p>
+	</div>
+	{% endfor %}
+</div>

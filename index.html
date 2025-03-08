@@ -3,15 +3,64 @@ layout: default
 title: Aaron Friesen
 ---
 
+<header>
+	<img class="avatar" src="/assets/img/avatar.png" />
+	<div>
+		<h1>Aaron Friesen</h1>
+		<p>
+			Hello there! Welcome to my personal website. Here you can find various
+			projects of mine, including free video games and software. Thanks for
+			stopping by!
+		</p>
+		<p>
+			<a href="https://friedev.itch.io" title="itch.io"
+				><i class="fa-brands fa-itch-io fa-xl"></i
+			></a>
+			&nbsp;
+			<a href="https://github.com/friedev/" title="GitHub"
+				><i class="fa-brands fa-github fa-xl"></i
+			></a>
+			&nbsp;
+			<a href="https://soundcloud.com/friedev/" title="SoundCloud"
+				><i class="fa-brands fa-soundcloud fa-xl"></i
+			></a>
+			&nbsp;
+			<a href="https://bsky.app/profile/frie.dev" title="Bluesky"
+				><i class="fa-brands fa-bluesky fa-xl"></i
+			></a>
+			&nbsp;
+			<a href="https://www.reddit.com/user/friedev/" title="Reddit"
+				><i class="fa-brands fa-reddit fa-xl"></i
+			></a>
+			&nbsp;
+			<a title="Email: my first name (at) this domain"
+				><i class="fa-solid fa-envelope fa-xl"></i
+			></a>
+		</p>
+	</div>
+</header>
+
 <main class="index">
-	<p>
-		I make free software, games, and music, all of which can be found here.
-	</p>
-	<p>
-		My email address is
-		<span class="hint" title="You can figure it out, but the spambots can't."
-			>my first name at this domain</span
-		>. Here is my <a href="pubkey.txt">PGP public key</a>.
-	</p>
-	{% include content.html %}
+	<div>
+		<h1><a class="no-color" href="/projects#games">Games</a></h1>
+		<div class="project-row">{% include project-index.html type="game" %}</div>
+
+		<h1><a class="no-color" href="/projects#software">Software</a></h1>
+		<div class="project-row">
+			{% include project-index.html type="software" %}
+		</div>
+
+		<div class="blog-heading">
+			<h1><a class="no-color" href="/blog">Blog</a></h1>
+			<p>
+				<a href="/feed.xml" title="RSS Feed"
+					><i class="fa-solid fa-square-rss fa-xl"></i
+				></a>
+			</p>
+		</div>
+		{% include posts.html limit=5 %}
+		<div class="center">
+			<p><a href="/blog">Archive</a></p>
+		</div>
+	</div>
 </main>

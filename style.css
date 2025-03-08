@@ -5,7 +5,7 @@
 
 body {
 	color: #fff;
-	background-color: #000;
+	background-color: #181818;
 	font-family: sans-serif;
 	display: flex;
 	flex-direction: column;
@@ -15,15 +15,51 @@ body {
 }
 
 header,
+nav,
+footer {
+	background-color: #181818;
+	padding: 0.5rem 1rem;
+}
+
 footer {
 	text-align: center;
-	padding: 1rem;
+	border-top: 2px solid #333;
+}
+
+header {
+	border-bottom: 2px solid #333;
+}
+
+nav {
+	display: flex;
+	flex-flow: wrap row;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 2px solid #333;
+	gap: 1rem;
+}
+
+nav > div {
+	display: flex;
+	flex-flow: wrap row;
+	align-items: center;
+	gap: 1rem;
 }
 
 main {
+	background-color: #000;
+	padding-bottom: 2rem;
+}
+
+main > div {
 	flex: 1;
 	max-width: min(95vw, 64rem);
 	margin: 1rem auto;
+
+	/* Make sure the page content fills the screen so the footer doesn't expand
+	 * on pages with minimal content, e.g. 404.html
+	 * I just found this number with trial and error */
+	min-height: calc(100vh - 14.5rem);
 }
 
 .center {
@@ -35,13 +71,23 @@ main {
 	font-weight: bold;
 }
 
-.date {
+.date,
+.tags,
+.toc summary {
 	color: #888;
 }
 
 .hint {
 	border-bottom: 1px dashed #888;
 	text-decoration: none;
+}
+
+.space-between {
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: space-between;
+	column-gap: 1rem;
+	align-items: center;
 }
 
 hr {
@@ -55,6 +101,7 @@ a {
 
 a:hover {
 	text-decoration: none;
+	color: #5af;
 }
 
 a.button {
@@ -69,21 +116,53 @@ a.button {
 
 a.button:hover {
 	background-color: #5af;
+	color: #000;
 }
 
-header h1 {
+img.site-icon {
+	height: 2.5rem;
+	width: auto;
+	margin: 0;
+}
+
+nav h2 {
 	font-weight: normal;
-	margin-bottom: 0.25em;
+	margin-bottom: 0rem;
 }
 
-header h1 a {
+a.no-color {
 	color: #fff;
 	text-decoration: none;
 }
 
-header h1 a:hover {
-	color: #fff;
+a.no-color:hover {
 	text-decoration: underline;
+}
+
+div.post-card .excerpt {
+	margin-top: 0.5rem;
+}
+
+header {
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	padding: 4rem 0;
+}
+
+header img {
+	width: 8rem;
+	height: 8rem;
+}
+
+header div {
+	width: min(min(95vw, 64rem) - 8rem - 2rem, 32rem);
+}
+
+header h1 {
+	margin-bottom: 0.5rem;
 }
 
 main hr {
@@ -92,9 +171,10 @@ main hr {
 
 p,
 code,
+pre,
 img,
 main h1,
-summary {
+details {
 	margin-bottom: 1rem;
 }
 
@@ -109,27 +189,27 @@ ul {
 	padding-left: 2rem;
 }
 
-main > ol,
-main > ul,
+ol,
+ul,
 div.project {
 	margin-bottom: 1rem;
 }
 
+li > p,
+li > ul,
+li > ol,
+.toc li {
+	margin-bottom: 0rem;
+}
+
 h1.post,
 div.project h3,
-div.album h3 {
+div.post-card h3 {
 	margin-bottom: 0;
 }
 
-main.project p#download,
-main.album p#download,
-main.project p#soundtrack,
-div.album p#download {
-	text-align: center;
-}
-
 blockquote {
-	background-color: #222;
+	background-color: #181818;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	padding: 0.5rem;
@@ -148,64 +228,158 @@ blockquote.notice {
 	border-left: 0.5rem solid #fc0;
 }
 
-code {
+pre {
 	display: block;
 	font-size: 1rem;
-	background-color: #222;
 	padding: 0.5rem;
+	tab-size: 4;
 }
 
-li code,
-p code {
+code {
 	display: inline;
 	font-size: 1rem;
 	background-color: transparent;
 	padding: 0;
 }
 
-div.project {
+.language-html pre,
+.language-json pre,
+.language-nix pre,
+.language-php pre,
+.language-xml pre,
+.language-xhtml pre {
+	tab-size: 2;
+}
+
+.tags a {
+	font-family: monospace;
+	font-size: 1rem;
+}
+
+div.project-row {
+	display: flex;
+	flex-flow: nowrap row;
+	gap: 1rem;
+
+	/* Horizontal scrolling: https://stackoverflow.com/a/25313647 */
+	position: relative;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+div.project-grid {
 	display: flex;
 	flex-flow: wrap row;
+	gap: 1rem;
+	/*justify-content: center;*/
+}
+
+pre,
+div.project,
+div.post-card,
+details.toc {
+	background-color: #181818;
+	border: 2px solid #333;
+}
+
+pre,
+div.project,
+div.post-card,
+div.highlight,
+details.toc {
+	border-radius: 0.5rem;
+}
+
+blockquote {
+	border-radius: 0.5rem 0 0 0.5rem;
+}
+
+a.button {
+	border-radius: 0.25rem;
+}
+
+details.toc {
+	padding: 0.5rem;
+}
+
+.toc > ul {
+	margin: 0.25rem 0;
+}
+
+div.project,
+div.post-card {
+	padding: 1rem;
+}
+
+div.post-card {
+	margin-bottom: 1rem;
+}
+
+div.post-card p.tags {
+	margin: 0;
+}
+
+div.project {
+	display: flex;
+	flex-flow: nowrap column;
+	/* (total width - 3 gaps between) / 4 projects - padding - border width */
+	min-width: calc((64rem - 3rem) / 4 - 2rem - 4px);
+	max-width: calc((64rem - 3rem) / 4 - 2rem - 4px);
 }
 
 div.project-content {
-	width: calc(min(95vw, 64rem) - 11rem);
+	display: flex;
+	flex-flow: nowrap column;
+	justify-content: space-between;
+	height: calc(100% - 10rem); /* subtract div.icon height */
+	flex: 1;
 }
 
-img.project {
+div.icon {
+	height: 10rem;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img.icon {
 	display: block;
 	width: 10rem;
 	height: auto;
-	margin-right: 1rem;
+	margin: auto;
+}
+
+p.icons {
+	text-align: right;
+	margin-bottom: 0;
+}
+
+div.blog-heading {
+	display: flex;
+	flex-flow: wrap row;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+div.post-title {
+	align-items: top;
+}
+
+div.post-title > p.date {
+	margin-bottom: 0;
 }
 
 img.logo {
+	float: right;
 	display: block;
 	text-align: center;
-	max-width: min(95vw, 40rem);
 	max-height: 20rem;
+	max-width: min(95vw, 32rem);
 	width: auto;
 	height: auto;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-div.albums {
-	display: flex;
-	justify-content: flex-start;
-	flex-flow: wrap row;
-	gap: 2rem;
-}
-
-div.album {
-	width: min(95vw, calc(64rem / 3 - 2rem));
-}
-
-img.album {
-	display: block;
-	width: 100%;
-	height: auto;
-	margin-left: auto;
+	margin-left: 1rem;
 	margin-right: auto;
 }
 
@@ -213,19 +387,39 @@ footer {
 	color: #888;
 }
 
-@media screen and not (min-width: 32rem) {
-	div.project,
-	div.project-content,
-	div.album {
+/* Switch project layout from "HScroll" to "VBox" */
+@media screen and not (min-width: calc(32rem / 0.95)) {
+	div.project {
 		width: 100vw;
 		max-width: 100%;
+		flex-direction: row;
+		margin-right: 0rem;
 	}
 
-	div.project > a,
-	img.project,
-	img.album {
-		width: min(16rem, 75vw);
+	div.icon {
+		margin-right: 1rem;
+	}
+
+	div.project-row,
+	div.project-grid {
+		flex-wrap: wrap;
+		position: unset;
+		overflow-x: unset;
+		overflow-y: unset;
+		-webkit-overflow-scrolling: unset;
+	}
+
+	img.icon {
+		max-width: 25vw;
+	}
+}
+
+/* Stop floating images, as they'll overlap with the title */
+@media screen and not (min-width: calc(48rem / 0.95)) {
+	img.logo {
+		float: none;
 		text-align: center;
+		max-width: 95%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -234,48 +428,57 @@ footer {
 @media (prefers-color-scheme: light) {
 	body {
 		color: #000;
+		background-color: #e8e8e8;
+	}
+
+	main {
 		background-color: #fff;
 	}
 
-	.date {
-		color: #444;
+	.date,
+	.tags,
+	.toc summary {
+		color: #666;
 	}
 
 	.hint {
-		border-bottom-color: #444;
+		border-bottom-color: #666;
 	}
 
 	hr {
 		color: #000;
 	}
 
-	header h1 a,
-	header h1 a:hover {
+	a.no-color {
 		color: #000;
 	}
 
-	a.button {
+	a.button,
+	a.button:hover {
 		color: #fff;
 	}
 
-	code {
-		background-color: #ccc;
-	}
-
 	blockquote {
-		background-color: #ccc;
+		background-color: #e8e8e8;
 	}
 
 	blockquote.notice {
 		background-color: #fe8;
 	}
 
-	footer {
-		color: #444;
+	header,
+	nav,
+	footer,
+	pre,
+	div.project,
+	div.post-card,
+	details.toc {
+		background-color: #e8e8e8;
+		border-color: #ccc;
 	}
 }
 
-main.wiki img {
+div.wiki img {
 	display: block;
 	width: 100%;
 	height: auto;

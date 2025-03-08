@@ -10,7 +10,7 @@ The original implementation was a Progressive Web App made with [React.js](https
 This is a Python implementation that closely conforms to the original rules of the game.
 It can run interactively in a terminal session, or as a [Discord](https://discord.com) bot.
 
-For a transcription of the rules, see [RULES.md](RULES.md).
+For a transcription of the rules, see [RULES.md](https://github.com/friedev/boost/blob/main/RULES.md).
 
 ## Installation
 

@@ -1,0 +1,36 @@
+{% assign count = 0 %}
+{% for project in site.projects reversed %}
+	{% if project.wip == Nil and include.type == Nil or project.type == include.type %}
+		<div class="project" id="{{ project.slug }}">
+			<div class="icon">
+				<a href="{{ project.url }}"
+					><img
+						class="icon"
+						src="/assets/img/icons/{{ project.slug }}.png"
+						alt=""
+				/></a>
+			</div>
+			<div class="project-content">
+				<div>
+					<h3 class="project">
+						<a href="{{ project.url }}">{{ project.title }}</a>
+					</h3>
+					<p class="date">{{ project.date | date_to_string }}</p>
+					<p>{{ project.tagline | markdownify }}</p>
+				</div>
+				{% include icons.html
+				download=project.download
+				pypi=project.pypi
+				github=project.github
+				git=project.git
+				soundcloud=project.soundcloud
+				soundtrack=project.soundtrack
+				%}
+			</div>
+		</div>
+		{% assign count = count | plus: 1 %}
+		{% if include.limit and count >= include.limit %}
+			{% break %}
+		{% endif %}
+	{% endif %}
+{% endfor %}

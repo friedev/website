@@ -1,16 +1,28 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<title>{{ page.title }}</title>
-		{% include head.html %}
-	</head>
-	<body>
-		{% include header.html %}
-		<main class="project">
-			<h1 class="post">{{ page.title }}</h1>
-			<p class="date">{{ page.date | date: "%B %-d, %Y" }}</p>
-			{{ content }}
-		</main>
-		{% include footer.html %}
-	</body>
-</html>
+---
+layout: page
+---
+
+{% if page.logo %}
+<img class="logo" src="/assets/img/logos/{{ page.slug }}.png" alt="" />
+{% endif %}
+<div class="space-between">
+	<div>
+		<h1 class="post">{{ page.title }}</h1>
+		<p class="date">{{ page.date | date_to_string }}</p>
+	</div>
+	{% include icons.html
+	download=page.download
+	pypi=page.pypi
+	github=page.github
+	git=page.git
+	soundcloud=page.soundcloud
+	soundtrack=page.soundtrack
+	%}
+</div>
+{% if page.wip %}
+	{% include update_notice.html %}
+{% endif %}
+{% capture readme %}
+	{% include readme/{{ page.slug }}.md %}
+{% endcapture %}
+{{ readme | markdownify }}

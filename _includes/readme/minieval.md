@@ -62,9 +62,9 @@ Subsequent updates developed by [Aaron Friesen](https://frie.dev).
 
 Software used: [Godot Engine](https://godotengine.org), [GIMP](https://gimp.org), [LMMS](https://lmms.io/), [jfxr](https://jfxr.frozenfractal.com)
 
-See [THIRD-PARTY_ASSETS.md](THIRD-PARTY_ASSETS.md) for the list of third-party assets used and their licenses.
+See [THIRD-PARTY_ASSETS.md](https://github.com/friedev/minieval/blob/main/THIRD-PARTY_ASSETS.md) for the list of third-party assets used and their licenses.
 
 ## License
 
-- Source Code: [GNU Affero General Public License v3](https://www.gnu.org/licenses/agpl-3.0.en.html) (see [LICENSE.txt](LICENSE.txt))
-- Original Assets: [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) (see [ASSET_LICENSE.txt](ASSET_LICENSE.txt))
+- Source Code: [GNU Affero General Public License v3](https://www.gnu.org/licenses/agpl-3.0.en.html) (see [LICENSE.txt](https://github.com/friedev/minieval/blob/main/LICENSE.txt))
+- Original Assets: [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) (see [ASSET_LICENSE.txt](https://github.com/friedev/minieval/blob/main/ASSET_LICENSE.txt))
