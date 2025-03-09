@@ -1,32 +1,37 @@
 <p class="icons">
 	{% if include.download %}
-	<a class="button" href="{{ include.download }}" title="Download"
+	<a href="{{ include.download }}" title="Download"
 		><i class="fa-solid fa-download"></i
-	></a>
+	><span>&nbsp;Download</span></a>
+	&nbsp; {% endif %}
+	{% if include.itch %}
+	<a href="{{ include.itch }}" title="itch.io"
+		><i class="fa-brands fa-itch-io fa-xl"></i
+	><span>&nbsp;{% if include.web %}Play{% else %}Download{% endif %}</span></a>
 	&nbsp; {% endif %}
 	{% if include.pypi %}
 	<a id="pypi" href="https://pypi.org/project/{{ include.pypi }}" title="PyPI"
 		><i class="fa-brands fa-python fa-xl"></i
-	></a>
+	><span>&nbsp; Install</span></a>
 	&nbsp; {% endif %}
 	{% if include.github %}
 	<a id="git" href="https://github.com/{{ include.github }}" title="GitHub"
 		><i class="fa-brands fa-github fa-xl"></i
-	></a>
+	><span>&nbsp; Clone</span></a>
 	&nbsp; {% endif %}
 	{% if include.git %}
 	<a id="git" href="{{ include.git }}" title="Git"
 		><i class="fa-brands fa-git-alt fa-xl"></i
-	></a>
+	><span>&nbsp; Clone</span></a>
 	&nbsp; {% endif %}
 	{% if include.soundcloud %}
 	<a id="git" href="{{ include.soundcloud }}" title="SoundCloud"
 		><i class="fa-brands fa-soundcloud fa-xl"></i
-	></a>
+	><span>&nbsp; Listen</span></a>
 	&nbsp; {% endif %}
 	{% if include.soundtrack %}
 	<a id="git" href="{{ include.soundtrack }}" title="Soundtrack"
 		><i class="fa-solid fa-music fa-xl"></i
-	></a>
+	><span>&nbsp; Listen</span></a>
 	&nbsp; {% endif %}
 </p>

@@ -104,7 +104,8 @@ a:hover {
 	color: #5af;
 }
 
-a.button {
+a.button,
+.icons a:first-of-type {
 	color: #000;
 	background-color: #38f;
 	padding: 0.2rem 0.4rem;
@@ -114,9 +115,18 @@ a.button {
 	font-weight: bold;
 }
 
-a.button:hover {
+a.button:hover,
+.icons a:first-of-type:hover {
 	background-color: #5af;
 	color: #000;
+}
+
+.icons a span {
+	display: none;
+}
+
+.icons a:first-of-type span {
+	display: unset;
 }
 
 img.site-icon {
@@ -300,7 +310,8 @@ blockquote {
 	border-radius: 0.5rem 0 0 0.5rem;
 }
 
-a.button {
+a.button,
+.icons a:first-of-type {
 	border-radius: 0.25rem;
 }
 
@@ -470,7 +481,8 @@ footer {
 	}
 
 	a.button,
-	a.button:hover {
+	a.button:hover,
+	.icons a:first-of-type {
 		color: #fff;
 	}
 
