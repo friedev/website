@@ -15,8 +15,7 @@
 					<h3 class="project">
 						<a href="{{ project.url }}">{{ project.title }}</a>
 					</h3>
-					<p class="date">{{ project.date | date_to_string }}</p>
-					<p>{{ project.tagline | markdownify }}</p>
+					{{ project.tagline | markdownify }}
 				</div>
 				{% include icons.html
 				download=project.download

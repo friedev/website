@@ -7,7 +7,7 @@ layout: page
 	<p class="date">
 		Published {{ page.date | date_to_string }}
 		{% if page.updated %}
-			&mdash; Last Updated {{ page.updated | date_to_string }}
+			- Last Updated {{ page.updated | date_to_string }}
 		{% endif %}
 	</p>
 	<p class="tags"><i class="fa-solid fa-tag"></i> {{ page | tags }}</p>
@@ -17,5 +17,6 @@ layout: page
 	<summary>Table of Contents</summary>
 	{{ content | toc_only }}
 </details>
-{% endif %} {{ content }}
+{% endif %}
+{{ content }}
 
