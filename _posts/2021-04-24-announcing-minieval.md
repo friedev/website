@@ -5,7 +5,7 @@ tags: games minieval projects
 ---
 
 Minieval is a tiny medieval city builder, inspired by [Islanders](https://store.steampowered.com/app/1046030/ISLANDERS/).
-You can play it online on [itch.io](https://maugrift.itch.io/minieval) (EDIT: currently unavailable) or check out the source code on [GitHub](https://github.com/friedev/minieval)!
+You can play it online on [itch.io](https://friedev.itch.io/minieval?password=minieval) or check out the source code on [GitHub](https://github.com/friedev/minieval)!
 
 In this post I'll be talking about the background of the game and the development process.
 If you're interested in more details about the game itself, check out its [project page](/minieval) on my website.
