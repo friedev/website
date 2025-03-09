@@ -129,6 +129,11 @@ a.button:hover,
 	display: unset;
 }
 
+.icons,
+.social {
+	line-height: 2rem;
+}
+
 img.site-icon {
 	height: 2.5rem;
 	width: auto;
