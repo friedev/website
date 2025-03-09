@@ -52,13 +52,13 @@ Corsair Warfare was made by [Aaron Friesen](https://frie.dev) in collaboration w
 
 - Tristan Maiefski: Art
 - Preston Pinkelman: Music, Additional Programming
-- Kyle Gann: Additional Programming
+- Sky Gann: Additional Programming
 
 Made with [Godot Engine 4](https://godotengine.org).
 
 ### Third-Party Assets
 
-See `THIRD-PARTY_LICENSES.md`.
+See [Third-Party Licenses](https://github.com/friedev/corsair-warfare/blob/main/THIRD-PARTY_LICENSES.md).
 
 ## Licenses
 
