@@ -13,9 +13,11 @@ layout: page
 	<div>
 		<h1 class="post">{{ page.title }}</h1>
 		<p class="date">
-			Released {{ page.date | date_to_string }}
-			{% if page.updated %}
-				- Last Updated {{ page.updated | date_to_string }}
+			{% capture date_string %}{{ page.date | date_to_string }}{% endcapture %}
+			{% capture updated_string %}{{ page.updated | date_to_string }}{% endcapture %}
+			Released {{ date_string }}
+			{% if date_string != updated_string %}
+				- Last Updated {{ updated_string }}
 			{% endif %}
 		</p>
 	</div>

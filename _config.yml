@@ -13,7 +13,7 @@ collections:
   projects:
     output: true
     permalink: "/:path/"
-    sort_by: date
+    sort_by: updated
 
 defaults:
   -
