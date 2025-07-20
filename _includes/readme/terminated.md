@@ -1,25 +1,36 @@
 
-Slay robots in this top-down arena shooter inspired by [Devil Daggers](https://devildaggers.com/) by Sorath and [2DDD](https://www.youtube.com/watch?v=AdUhOtKY0ko) by Bintr.
+> `ERROR: FAILED TO TERMINATE ROGUE AI. INITIATING WEAPONIZED SHUTDOWN PROTOCOL.`
 
-TERMINATED (including all code, art, and music) was created by [Aaron Friesen](https://frie.dev).
+A top-down arena shooter in which you play a sentient robot cast into a scrapyard.
+How long can you survive against the endless onslaught of mindless drones sent to terminate you?
 
-## Instructions
+## How to Play
 
-- [R] to start
-- [ESC] to quit
-- [WASD] to move
-- Hold [LMB] to shoot
-- Tap [LMB] for shotgun
-- [RMB] for laser
-- [SCROLL] to zoom
-- [F] to toggle FPS
+Gameplay:
 
-## Assets and Tools
+- **Move**: WASD / left stick
+- **Aim**: mouse / right stick
+- **Machine Gun**: hold left click / right trigger
+- **Shotgun**: tap left click / left trigger
+- **Laser**: right click / bumpers
 
-- Font: [FixedSys Excelsior](https://github.com/kika/fixedsys)
-- Sound Effects: see `SOUND_LICENSES.txt`
+UI:
+
+- **Restart**: R / back
+- **Give Up**: escape / menu
+- **Toggle Fullscreen**: F11
+- **Toggle Timer**: T
+- **Toggle FPS Counter**: F
+
+## Credits
+
+Terminated was created by [Aaron Friesen](https://frie.dev).
+
+Made with [Godot Engine 4](https://godotengine.org).
+
+See [Third-Party Licenses](https://github.com/friedev/terminated/blob/main/THIRD-PARTY_LICENSES.md) for the list of third-party assets used and their licenses.
 
 ## License
 
-- The source code is available under the [GNU Affero General Public License v3](https://www.gnu.org/licenses/agpl-3.0.en.html) (see `LICENSE.txt`).
-- All original assets (art, music, and original sound effects) are available under the [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) (see `ASSET_LICENSE.txt`).
+- Source Code: [GNU Affero General Public License v3](https://www.gnu.org/licenses/agpl-3.0.en.html) (see [LICENSE.txt](https://github.com/friedev/terminated/blob/main/LICENSE.txt))
+- Original Assets: [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) (see [ASSET_LICENSE.txt](https://github.com/friedev/terminated/blob/main/ASSET_LICENSE.txt))
