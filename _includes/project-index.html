@@ -1,6 +1,6 @@
 {% assign count = 0 %}
 {% for project in site.projects reversed %}
-	{% if project.wip == Nil and include.type == Nil or project.type == include.type %}
+	{% if project.unlisted == Nil and project.wip == Nil and include.type == Nil or project.type == include.type %}
 		<div class="project" id="{{ project.slug }}">
 			<div class="icon">
 				<a href="{{ project.url }}"
